@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url("pheadshot.jpg");
+      background-position: center;
+      background-size: cover;
+      z-index: 1;
+      overflow: hidden;
+      
+    }
+
+    /* Dark transparent overlay */
+    #header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+      z-index: 2;
+    }
+    
+    #header-text-div{
+      width: 100%;
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; 
+      
+    }
+    
+     #header-text-div #header-text{
+       color: white;
+      z-index: 3;
+      font-size: 35px;
+      text-align: center;
+     }
+     
+     
+     #cv-btn{
+       background-color: darkolivegreen;
+       color: white;
+       padding: 15px;
+       z-index: 3;
+       font-size: 20px;
+       margin-top: 35px;
+       border-radius: 15px;
+       outline: 2px solid darkolivegreen;
+       border: 2px solid darkolivegreen;
+     }
+     
+    .navbar {
+      position: relative;
+      z-index: 4; /* Ensure navbar stays above the overlay */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /*background-color: #333;*/
+      background-color: transparent;
+      padding: 16px 32px;
+      color: white;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+    
+    
+    #about-me{
+      width: 100%;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; 
+      padding: 10px 120px;
+    }
+    
+    #about-me h2{
+      
+    }
+    
+    #about-me p{
+      margin-top: 40px;
+      text-align: center;
+      
+    }
+    
+    
+    #my-skills{
+      width: 100%;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; 
+      padding: 10px 80px;
+    }
+    
+    
+    #my-skills #my-skills-wrapper{
+      width: 100%;
+      height: 200px;
+      margin-top: 40px;
+       display: flex;
+       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+       padding: 10px 30px;
+      
+    }
+    
+    
+    #my-skills #my-skills-wrapper div{
+      width: 130px;
+      height: 130px;
+      margin-top: 20px;
+      background-color: darkolivegreen;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+    #portfolio{
+      width: 100%;
+      min-height: 300px;
+      /*border: 2px solid black;*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; 
+      padding: 10px 30px;
+      margin-top: 20px;
+      
+    }
+    
+    
+    
+    #portfolio-wrapper{
+      width: 100%;
+      min-height: 200px;
+      /*border: 2px solid black;*/
+      overflow-x: auto;
+    }
+    
+     tr{
+       width: 105%;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+     }
+    
+        #portfolio h2{
+          margin-top: 25px;
+      margin-bottom: 70px;
+      
+      
+      
+    }
+    
+   a img {
+     width: 230px;
+     height: 300px;
+     border-radius: 7px;
+   }
+
+    
+    
+    
+    #gallery{
+      width: 100%;
+      min-height: 300px;
+      /*border: 2px solid black;*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; 
+     /* padding: 10px 80px;*/
+    }
+    
+    #gallery h2{
+      margin-bottom: 40px;
+      margin-top: 70px;
+      
+    }
+    
+    
+    /*
+    #gallery-wrapper{
+      width: 100%;
+      min-height: 200px;
+      border: 2px solid black;
+      
+    }*/
+    
+    /*Carousel related */
+    
+     .carousel {
+      background: white;
+      padding: 30px 50px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+     /* max-width: 400px;*/
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     
+    }
+
+    .image {
+      font-size: 18px;
+      min-height: 60px;
+      margin-bottom: 20px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background-color: darkolivegreen;
+    }
+    
+    
+    #carosel-img{
+      width: 800px;
+      height: 600px;
+      border-radius: 7px;
+    }
+    
+    
+    
+    #contacts{
+      width: 100%;
+      min-height: 300px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; 
+      padding: 10px 80px;
+    }
+    
+    
+    
+    #contacts-wrapper{
+      width: 100%;
+      min-height: 200px;
+      border: 2px solid black;
+      
+    }
+    
+    #copyright{
+      color: white;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+    }
+    
+
+
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 200px;
+        padding: 16px;
+        display: none;
+      }
+      
+      
+      
+      #header-text-div{
+      padding: 0 10px;
+      
+    }
+      
+      
+      
+       #header-text-div #header-text{
+       
+      font-size: 38px;
+      
+      
+     }
+      
+    
+      
+      #hi-there{
+        display: block;
+        margin-bottom: 15px;
+      }
+      
+      
+       #cv-btn{
+       
+       padding: 14px;
+       
+       font-size: 18px;
+      
+     }
+      
+      .navbar{
+       background-color: #333;
+       
+       
+        
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+        
+      }
+      
+       
+    
+    #about-me{
+      padding: 50px 30px;
+    }
+    
+    #about-me h2{
+      
+    }
+    
+    #about-me p{
+    
+   
+      
+    }
+
+      #my-skills #my-skills-wrapper{
+        
+        
+      height: 1000px;
+       flex-direction: column;
+      
+    } 
+    
+    
+     #my-skills #my-skills-wrapper div{
+      width: 180px;
+      height: 180px;
+      
+    }
+    
+    #carosel-img{
+      width: 300px;
+      height: 200px;
+    }
+    
+      
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <nav class="navbar">
+      <div class="logo">Casmir</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#my-skills">My Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <div id="header-text-div">
+    <h1 id="header-text">
+      <span id="hi-there">Hi there!</span> My name is Casmir and<br> I'm a <span style="color: darkolivegreen">front-end developer</span>
+     
+    </h1>
+    
+     <button id="cv-btn">Download the CV</button>
+    </div>
+    
+  </section>
+  
+<section id="about-me">
+  <h2>About Me</h2>
+  
+  <p>
+    Hi, I'm Casmir Chiemela Ihechituru, a passionate Frontend Developer based in Abuja, Nigeria, with over 2 years of coding experience. I focus on building clean, responsive, and user-friendly websites using HTML, CSS, JavaScript, Bootstrap, and jQuery.
+
+While I'm still growing my skills, I'm always eager to learn and improve. I enjoy bringing designs to life with code and take pride in writing structured and efficient markup and styling.
+
+I'm passionate about web development and continuously work on becoming a better developer every day.
+  </p>
+</section>
+
+<section id="my-skills">
+  <h2>My Skills</h2>
+  
+  <div id="my-skills-wrapper">
+  <div>
+    <h3>HTML</h3>
+  </div>
+  
+  <div>
+    <h3>CSS</h3>
+  </div>
+  
+  <div>
+    <h3>Bootstrap</h3>
+  </div>
+  
+  <div>
+    <h3>Javascript</h3>
+  </div>
+  
+  <div>
+    <h3>jQuery</h3>
+  </div>
+  </div>
+  
+</section>
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div id="portfolio-wrapper">
+  <table >
+    <tr >
+      <td><a href="#"><img src="1.jpg" alt=""></a></td>
+      <td><a href="#"><img src="1.jpg" alt=""></a></td>
+      <td><a href="#"><img src="1.jpg" alt=""></a></td>
+      <td><a href="#"><img src="1.jpg" alt=""></a></td>
+    </tr>
+  </table>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+ <!-- <div id="gallery-wrapper">
+    
+  </div>-->
+  
+  <div class="carousel">
+    <div class="image" id="carouselImage">Loading...</div>
+    <div class="dots" id="dotsContainer"></div>
+  </div>
+  
+</section>
+
+<section id="contacts">
+  <h2>Contacts</h2>
+  <div id="contacts-wrapper">
+    
+  </div>
+  
+</section>
+<section id="copyright">
+  <p>All right reserved &copy; 2025</p>
+</section>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    
+    
+    
+    
+    
+    //Carousel related
+    
+    const images = [
+      "imgproj1.jpg",
+      "imgproj2.jpg",
+      "imgproj3.jpg",
+      "imgproj4.jpg"
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById('carouselImage');
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    // Create dots based on number of images
+    images.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateCarousel();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateCarousel() {
+      textElement.innerHTML =`<img id="carosel-img" src=${images[index]}>` ;
+
+      // Update dot styles
+      const allDots = document.querySelectorAll('.dot');
+      allDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      updateCarousel();
+    }
+
+    // Auto switch every 4 seconds
+    setInterval(nextImage, 3500);
+
+    // Show the first item
+    updateCarousel();
+  </script>
+</body>
+
+</html>
