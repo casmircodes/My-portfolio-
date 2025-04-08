@@ -91,12 +91,20 @@
       list-style: none;
       display: flex;
       gap: 24px;
+
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       font-size: 16px;
+
+    }
+
+
+    .nav-links a:hover {
+      color: darkolivegreen;
+      
     }
 
     .hamburger {
@@ -180,7 +188,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column; 
-      padding: 10px 30px;
+      padding: 10px 110px;
       margin-top: 20px;
       
     }
@@ -190,8 +198,9 @@
     #portfolio-wrapper{
       width: 100%;
       min-height: 200px;
-      /*border: 2px solid black;*/
+     /* border: 2px solid black;*/
       overflow-x: auto;
+      
     }
     
      tr{
@@ -205,14 +214,16 @@
         #portfolio h2{
           margin-top: 25px;
       margin-bottom: 70px;
+    
       
       
       
     }
     
    a img {
-     width: 230px;
-     height: 300px;
+     width: 300px;
+     
+     height: 400px;
      border-radius: 7px;
    }
 
@@ -227,7 +238,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column; 
-     /* padding: 10px 80px;*/
+     padding: 10px 80px;
     }
     
     #gallery h2{
@@ -249,7 +260,7 @@
     
      .carousel {
       background: white;
-      padding: 30px 50px;
+      /*padding: 30px 50px;*/
       border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       text-align: center;
@@ -259,6 +270,8 @@
      justify-content: center;
      align-items: center;
      flex-direction: column;
+     /*border: 2px solid black;*/
+     padding-bottom: 10px;
      
     }
 
@@ -289,9 +302,12 @@
     
     
     #carosel-img{
-      width: 800px;
+      /*width: 1050px;*/
+      width: 700px;
+
       height: 600px;
       border-radius: 7px;
+      /*border: 2px solid black;*/
     }
     
     
@@ -299,22 +315,66 @@
     #contacts{
       width: 100%;
       min-height: 300px;
-      border: 2px solid black;
+      /*border: 2px solid black;*/
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column; 
       padding: 10px 80px;
     }
-    
-    
+
+
+    #contacts h2{
+    margin-top: 25px;
+      margin-bottom: 70px;
+    }
     
     #contacts-wrapper{
       width: 100%;
       min-height: 200px;
-      border: 2px solid black;
-      
+     /* border: 2px solid black;*/
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      /*border: 2px solid black;*/
     }
+
+    
+
+
+    #contacts-wrapper .contact-second-wrapper{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 60%;
+      height: 75px;
+     /*border: 2px solid black;*/
+
+    }
+
+
+    .contact-subtitle-wrapper{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+    }
+
+
+    
+
+    .contact-second-wrapper div{
+      
+      /*border: 2px solid black;*/
+
+    }
+
+
+
     
     #copyright{
       color: white;
@@ -418,11 +478,44 @@
       height: 180px;
       
     }
+
+    #portfolio{
+      
+      padding: 10px 30px;
+      
+      
+    }
+
+
+    a img {
+     width: 230px;
+     height: 300px;
+     
+   }
     
     #carosel-img{
       width: 300px;
       height: 200px;
     }
+    
+
+     #contacts-wrapper{
+      
+      flex-direction: column;
+      min-height: 400px;
+    }
+
+
+
+
+
+    #contacts{
+      
+      padding: 10px 30px;
+    }
+
+
+    
     
       
     }
@@ -500,10 +593,10 @@ I'm passionate about web development and continuously work on becoming a better 
   <div id="portfolio-wrapper">
   <table >
     <tr >
-      <td><a href="#"><img src="1.jpg" alt=""></a></td>
-      <td><a href="#"><img src="1.jpg" alt=""></a></td>
-      <td><a href="#"><img src="1.jpg" alt=""></a></td>
-      <td><a href="#"><img src="1.jpg" alt=""></a></td>
+      <td><a href="#"><img src="portfolio1.png" alt=""></a></td>
+      <td><a href="#"><img src="portfolio2.png" alt=""></a></td>
+      <td><a href="#"><img src="portfolio3.png" alt=""></a></td>
+      <td><a href="#"><img src="portfolio4.png" alt=""></a></td>
     </tr>
   </table>
   </div>
@@ -525,7 +618,50 @@ I'm passionate about web development and continuously work on becoming a better 
 <section id="contacts">
   <h2>Contacts</h2>
   <div id="contacts-wrapper">
+    <div class="contact-second-wrapper">
+      <div class="contact-subtitle-wrapper">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 18L9 12M20 18L15 12M3 8L10.225 12.8166C10.8665 13.2443 11.1872 13.4582 11.5339 13.5412C11.8403 13.6147 12.1597 13.6147 12.4661 13.5412C12.8128 13.4582 13.1335 13.2443 13.775 12.8166L21 8M6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V8.2C21 7.0799 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19Z" stroke="darkolivegreen" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<p><b>E-mail</b></p>
+    </div>
+    <div>
+      <p>casmirihechi@gmail.com</p>
+    </div>
+    </div>
     
+
+    <div class="contact-second-wrapper">
+      <div class="contact-subtitle-wrapper">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.3308 15.9402L15.6608 14.6101C15.8655 14.403 16.1092 14.2384 16.3778 14.1262C16.6465 14.014 16.9347 13.9563 17.2258 13.9563C17.517 13.9563 17.8052 14.014 18.0739 14.1262C18.3425 14.2384 18.5862 14.403 18.7908 14.6101L20.3508 16.1702C20.5579 16.3748 20.7224 16.6183 20.8346 16.887C20.9468 17.1556 21.0046 17.444 21.0046 17.7351C21.0046 18.0263 20.9468 18.3146 20.8346 18.5833C20.7224 18.8519 20.5579 19.0954 20.3508 19.3L19.6408 20.02C19.1516 20.514 18.5189 20.841 17.8329 20.9541C17.1469 21.0672 16.4427 20.9609 15.8208 20.6501C10.4691 17.8952 6.11008 13.5396 3.35083 8.19019C3.03976 7.56761 2.93414 6.86242 3.04914 6.17603C3.16414 5.48963 3.49384 4.85731 3.99085 4.37012L4.70081 3.65015C5.11674 3.23673 5.67937 3.00464 6.26581 3.00464C6.85225 3.00464 7.41488 3.23673 7.83081 3.65015L9.40082 5.22021C9.81424 5.63615 10.0463 6.19871 10.0463 6.78516C10.0463 7.3716 9.81424 7.93416 9.40082 8.3501L8.0708 9.68018C8.95021 10.8697 9.91617 11.9926 10.9608 13.04C11.9994 14.0804 13.116 15.04 14.3008 15.9102L14.3308 15.9402Z" stroke="darkolivegreen" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<p><b>Telephone number</b></p>
+    </div>
+    <div>
+      <p>+2349068832008</p>
+    </div>
+    </div>
+
+
+    <div class="contact-second-wrapper">
+      <div class="contact-subtitle-wrapper">
+      <svg width="30px" height="30px" viewBox="-1 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    
+   
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">-->
+        <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-312.000000, -726.000000)" fill="darkolivegreen">
+            <path d="M331,750 C329.343,750 328,748.657 328,747 C328,745.343 329.343,744 331,744 C332.657,744 334,745.343 334,747 C334,748.657 332.657,750 331,750 L331,750 Z M317,742 C315.343,742 314,740.657 314,739 C314,737.344 315.343,736 317,736 C318.657,736 320,737.344 320,739 C320,740.657 318.657,742 317,742 L317,742 Z M331,728 C332.657,728 334,729.343 334,731 C334,732.657 332.657,734 331,734 C329.343,734 328,732.657 328,731 C328,729.343 329.343,728 331,728 L331,728 Z M331,742 C329.23,742 327.685,742.925 326.796,744.312 L321.441,741.252 C321.787,740.572 322,739.814 322,739 C322,738.497 321.903,738.021 321.765,737.563 L327.336,734.38 C328.249,735.37 329.547,736 331,736 C333.762,736 336,733.762 336,731 C336,728.238 333.762,726 331,726 C328.238,726 326,728.238 326,731 C326,731.503 326.097,731.979 326.235,732.438 L320.664,735.62 C319.751,734.631 318.453,734 317,734 C314.238,734 312,736.238 312,739 C312,741.762 314.238,744 317,744 C318.14,744 319.179,743.604 320.02,742.962 L320,743 L326.055,746.46 C326.035,746.64 326,746.814 326,747 C326,749.762 328.238,752 331,752 C333.762,752 336,749.762 336,747 C336,744.238 333.762,742 331,742 L331,742 Z" id="share" sketch:type="MSShapeGroup">
+
+</path>
+       
+</svg>
+<p><b>Social Media</b></p>
+    </div>
+    <div>
+      <p>Lorem ipsum</p>
+    </div>
+    </div>
   </div>
   
 </section>
@@ -535,17 +671,42 @@ I'm passionate about web development and continuously work on becoming a better 
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
+    const cvBtn = document.getElementById('cv-btn')
 
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
     
-    
-    
+   
+
+
+
+   //Download CV opon button click 
+    cvBtn.addEventListener("click",()=>{
+
+      const fileUrl = "1.jpg"
+      const fileName = "casmircv.jpg"
+
+      const link = document.createElement("a")
+
+      link.href = fileUrl
+      link.download = fileName
+      
+
+
+      document.body.appendChild(link)
+
+      link.click()
+
+      link.remove()
+
+
+    })
+
+
     
     
     //Carousel related
-    
     const images = [
       "gallery1.jpg",
       "gallery2.png",
@@ -557,6 +718,9 @@ I'm passionate about web development and continuously work on becoming a better 
     let index = 0;
     const textElement = document.getElementById('carouselImage');
     const dotsContainer = document.getElementById('dotsContainer');
+
+    
+
 
     // Create dots based on number of images
     images.forEach((_, i) => {
